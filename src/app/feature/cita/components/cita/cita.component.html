@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table table-success table-striped" style="margin-top:30px">
+    <thead>
+      <tr>
+        <th scope="col">Fecha y hora</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Sede</th>
+        <th scope="col">Valor servicio</th>
+        <th scope="col">% descuento</th>
+        <th scope="col">Nombre descuento</th>
+        <th scope="col">Total servicio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of listaCitas$">
+        <td>{{cita.fechaHora}}</td>
+        <td>{{cita.nombreCliente}}</td>
+        <td>{{cita.nombreServicio}}</td>
+        <td>{{cita.nombreSede}}</td>
+        <td>{{cita.valorServicio}}</td>
+        <td>{{cita.valorDescuento}}</td>
+        <td>{{cita.nombreDescuento}}</td>
+        <td>{{cita.valorServicio-((cita.valorServicio*cita.valorDescuento)/100)}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex table-pagination">
+    <div class="align-right col-6">
+      <button type="button" (click)="nuevo()" class="btn btn-success">Crear</button>
+        <button type="button" name="button" [routerLink]="'/home'" class="btn btn-secondary">Regresar</button>
+    </div>
+  </div>
+</div>

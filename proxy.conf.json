@@ -1,0 +1,7 @@
+{
+  "/adn-jefferson-rios": {
+    "target": "http://localhost:9000/",
+    "logLevel": "debug"
+  }
+
+}

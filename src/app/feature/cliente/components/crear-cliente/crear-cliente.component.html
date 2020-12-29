@@ -1,0 +1,33 @@
+<div class="center modal-header">
+  <h5 class="modal-title">Crear cliente</h5>
+</div>
+<form [formGroup]="clienteForm" class="modal-body" (ngSubmit)="crear()">
+  <div class="col-12 form-group">
+    <label for="nombre">Nombre
+    </label>
+    <input validar type="text" id="nombre" class="form-control" formControlName="nombre" maxlength="100" />
+  </div>
+  <div class="col-12 form-group">
+    <label for="email">E-mail
+    </label>
+    <input validar type="text" id="email" class="form-control" formControlName="email" maxlength="100" />
+  </div>
+  <div class="col-12 form-group">
+    <label for="telefono">Teléfono
+    </label>
+    <input validar type="text" id="telefono" class="form-control" digitOnly formControlName="telefono" maxlength="100" />
+  </div>
+  <div class="col-12 form-group">
+    <label for="ciudad">Ciudad
+    </label>
+    <select validar id="ciudad" class="form-control" formControlName="idCiudad">
+      <option value="">(Seleccionar)</option>
+      <option *ngFor="let ciudad of listaCiudades$" [value]="ciudad.id">{{ ciudad.nombre }}</option>
+    </select>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button type="button" (click)="regresar()" class="btn btn-secondary">Regresar</button>
+  </div>
+    <app-mensaje [mensaje]="modalService.mensajeUsuario" [error] = "modalService.error" [exito]="modalService.exito"></app-mensaje>
+</form>

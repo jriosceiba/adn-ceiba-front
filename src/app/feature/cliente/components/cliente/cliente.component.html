@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-success table-striped" style="margin-top:30px">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Fecha creación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of listaClientes$">
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.telefono}}</td>
+        <td>{{cliente.nombreCiudad}}</td>
+        <td>{{cliente.fechaCreacion}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex table-pagination">
+    <div class="align-right col-6">
+      <button type="button" (click)="nuevo()" class="btn btn-success">Crear</button>
+        <button type="button" name="button" [routerLink]="'/home'" class="btn btn-secondary">Regresar</button>
+    </div>
+  </div>
+</div>

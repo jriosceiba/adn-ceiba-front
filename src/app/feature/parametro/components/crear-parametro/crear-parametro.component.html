@@ -1,0 +1,33 @@
+<div class="center modal-header">
+  <h5 class="modal-title">Crear parámetro</h5>
+</div>
+<form [formGroup]="parametroForm" class="modal-body" (ngSubmit)="crear()">
+  <div class="col-12 form-group">
+    <label for="nombre">Nombre
+    </label>
+    <input validar type="text" id="nombre" class="form-control" formControlName="nombre" maxlength="100" />
+  </div>
+  <div class="col-12 form-group">
+    <label for="valor">Valor
+    </label>
+    <input type="text" id="valor" class="form-control" formControlName="valor" maxlength="100" />
+  </div>
+  <div class="col-12 form-group">
+    <label for="tipo">Tipo parametro
+    </label>
+    <select validar id="tipo" class="form-control" formControlName="tipoParametro">
+      <option value="">(Seleccionar)</option>
+      <option value="CIUDAD">Ciudad</option>
+      <option value="DESCUENTO_ANUAL">Descuento aniversario</option>
+      <option value="DESCUENTO_CANTIDAD">Descuento cantidad</option>
+      <option value="DIA_FESTIVO">Dia Festivo</option>
+      <option value="SEDE">Sede</option>
+      <option value="SERVICIO">Servicio</option>
+    </select>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button type="button" (click)="regresar()" class="btn btn-secondary">Regresar</button>
+  </div>
+  <app-mensaje [mensaje]="modalService.mensajeUsuario" [error]="modalService.error" [exito]="modalService.exito"></app-mensaje>
+</form>

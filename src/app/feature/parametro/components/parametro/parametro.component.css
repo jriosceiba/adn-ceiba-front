@@ -1,0 +1,20 @@
+.btn-menu {
+    color: #fff !important;
+    background-color: #093c03 !important;
+    border-color: #fff !important;
+    outline:none !important;
+}
+
+.btn-menu:hover {
+	color: #75a932;
+    background-color: #75a932 !important;
+    border-color: transparent;
+
+}
+.btn-menu:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+	background-color: #75a932;
+    border-color: #75a932;
+}
+.btn-menu.focus, .btn-menu:focus {
+	border-style: solid;
+}

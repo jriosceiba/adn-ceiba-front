@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table table-success table-striped" style="margin-top:30px">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Tipo parametro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parametro of listaParametros$">
+        <td>{{parametro.nombre}}</td>
+        <td>{{parametro.valor}}</td>
+        <td>{{parametro.tipoParametro}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex table-pagination">
+    <div class="align-right col-6">
+      <button type="button" (click)="nuevo()" class="btn btn-success">Crear</button>
+        <button type="button" name="button" [routerLink]="'/home'" class="btn btn-secondary">Regresar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="center modal-header">
+  <h5 class="modal-title">Crear cita</h5>
+</div>
+<form [formGroup]="citaForm" class="modal-body" (ngSubmit)="crear()">
+  <div class="col-12 form-group">
+    <label for="fechaHora">Fecha y hora</label>
+    <input validar class="form-control" formControlName="fechaHora" type="datetime-local" id="fechaHora" name="meeting-time" [min]="fechaConvert">
+  </div>
+  <div class="col-12 form-group">
+    <label for="cliente">Cliente
+    </label>
+    <select validar id="cliente" class="form-control" formControlName="idCliente">
+      <option value="">(Seleccionar)</option>
+      <option *ngFor="let cliente of listaClientes$" [value]="cliente.id">{{cliente.nombre}}-{{cliente.email}}</option>
+    </select>
+  </div>
+  <div class="col-12 form-group">
+    <label for="servicio">Servicio
+    </label>
+    <select validar id="servicio" class="form-control" formControlName="idServicio">
+      <option value="">(Seleccionar)</option>
+      <option *ngFor="let servicio of listaServicios$" [value]="servicio.id">{{servicio.nombre}}</option>
+    </select>
+  </div>
+  <div class="col-12 form-group">
+    <label for="sede">Sede
+    </label>
+    <select validar id="sede" class="form-control" formControlName="idSede">
+      <option value="">(Seleccionar)</option>
+      <option *ngFor="let sede of listaSedes$" [value]="sede.id">{{sede.nombre}}</option>
+    </select>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button type="button" (click)="regresar()" class="btn btn-secondary">Regresar</button>
+  </div>
+  <app-mensaje [mensaje]="modalService.mensajeUsuario" [error]="modalService.error" [exito]="modalService.exito"></app-mensaje>
+</form>
